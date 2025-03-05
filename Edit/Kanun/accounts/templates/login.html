@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f3f3;
+        }
+        .login-container {
+            max-width: 900px;
+            margin: 80px auto; /* Increased margin-top to shift it lower */
+            background: white;
+            display: flex;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .login-section {
+            flex: 1;
+            padding: 30px;
+        }
+        .login-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .login-section .form-control {
+            margin-bottom: 20px;
+            height: 45px;
+        }
+        .login-section .btn {
+            height: 45px;
+        }
+        .signup-section {
+            flex: 1;
+            background-color: #4A4EFF;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+        .signup-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .signup-section p {
+            margin-bottom: 20px;
+        }
+        .signup-section .btn {
+            background-color: white;
+            color: #4A4EFF;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+        }
+        .signup-section .btn:hover {
+            background-color: #3b3dd6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Kanun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <!-- Login Section -->
+        <div class="login-section">
+            <h2>Login</h2>
+            <p>Sign in to your account</p>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <a href="#" class="d-block text-end mt-2 text-primary">Forgot password?</a>
+            </form>
+            {% if form.errors %}
+                <div class="alert alert-danger mt-3">
+                    <ul class="mb-0">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Signup Section -->
+        <div class="signup-section">
+            <h2>Sign up</h2>
+            <p>Sign in to start your session</p>
+            <a href="{% url 'register' %}" class="btn">Register Now!</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

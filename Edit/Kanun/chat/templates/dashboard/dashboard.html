@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usage Dashboard</title>
+</head>
+<body>
+    <h1>Usage Dashboard</h1>
+    <p>Total Cost: ${{ total_cost }}</p>
+    <p>Total Tokens Used: {{ total_tokens }}</p>
+
+    <h2>Model Usage</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Queries</th>
+                <th>Tokens Used</th>
+                <th>Total Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in model_usage %}
+            <tr>
+                <td>{{ entry.model }}</td>
+                <td>{{ entry.count }}</td>
+                <td>{{ entry.tokens }}</td>
+                <td>${{ entry.cost }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

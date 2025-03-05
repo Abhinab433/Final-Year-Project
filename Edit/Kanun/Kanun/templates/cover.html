@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanun Chat - About Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        .hero-section {
+            background: url("{% static 'images/bhairav.jpg' %}") no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-top: 20px;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-us, .contact-info {
+            padding: 60px 0;
+        }
+
+        .about-us {
+            text-align: center;
+        }
+
+        .about-us h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .about-us .feature-item h5 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #007bff;
+        }
+
+        .about-us .feature-item p {
+            color: #555;
+        }
+
+        .contact-info {
+            background-color: #f8f9fa;
+            border-top: 5px solid #007bff;
+        }
+
+        .contact-info h3 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .contact-info .contact-item h4 {
+            font-size: 1.125rem;
+            color: #007bff;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-radius: 25px;
+            font-size: 1.125rem;
+            padding: 12px 40px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .map-container iframe {
+            border: 0;
+            width: 100%;
+            height: 300px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to Kanun</h1>
+            <p>Your go-to AI application for precise and insightful answers based on the Constitution of Nepal.</p>
+            <a href="{% url 'login' %}" class="btn btn-primary">Start Using Kanun</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="container">
+            <h2 class="text-primary">Our Vision</h2>
+            <p class="lead">
+                We aim to make legal resources more accessible and provide everyone with the ability to understand and utilize the Constitution of Nepal for a better tomorrow.
+            </p>
+            <hr>
+            <h2 class="text-primary">Features</h2>
+            
+            <ul class="list-unstyled mx-auto" style="max-width: 600px; text-align: left;">
+                <li class="feature-item mb-2">
+                    <h5>Instant Legal Information</h5>
+                    <p>Get quick, accurate responses based on the Constitution of Nepal.</p>
+                </li>
+                <li class="feature-item mb-3">
+                    <h5>Efficient and Accurate Answers</h5>
+                    <p>Powered by AI for precise legal information.</p>
+                </li>
+                <li class="feature-item mb-3">
+                    <h5>Easy-to-use Interface</h5>
+                    <p>Seamlessly navigate the app for legal support.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <h3>Contact Us</h3>
+                    <p class="lead">If you have any questions, feedback, or need assistance, feel free to reach out!</p>
+                    <div class="contact-item mb-4">
+                        <h4>Email</h4>
+                        <p><a href="mailto:020bscit002@sxc.edu.np" class="text-primary">020bscit002@sxc.edu.np</a></p>
+                    </div>
+                    <div class="contact-item mb-4">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+977-XXXX-XXXX" class="text-primary">+977-XXXX-XXXX</a></p>
+                    </div>
+                    <div class="contact-item mb-4">
+                        <h4>Location</h4>
+                        <p>Maitighar<br>Kathmandu, Nepal</p>
+                    </div>
+                    <a href="mailto:020bscit002@sxc.edu.np" class="btn btn-primary">Get in Touch</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.776194503379!2d85.3211291!3d27.693311299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19b032e93fc1%3A0x4a61dc499d928027!2sSt.%20Xavier&#39;s%20College!5e0!3m2!1sen!2snp!4v1737821083977!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kanun All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
